@@ -14,9 +14,9 @@ public class ExcelHandlerTest {
     @Test
     public void testRead() throws IOException {
         read = ExcelHandler.read(absPath + "ExcelData.xlsx");
+        System.out.println(read.get("2")[0]);
         System.out.println(read.get("2")[1]);
         System.out.println(read.get("2")[2]);
-        System.out.println(read.get("2")[3]);
     }
 
     @Test
