@@ -27,7 +27,7 @@ public class ExceptionHandlerTest {
 
     @Test
     public void testUserExceptionMessage() throws IOException {
-        ExceptionHandler.UserExceptionMessage();
+//        ExceptionHandler.UserExceptionMessage();
     }
 
     @Test
@@ -37,16 +37,16 @@ public class ExceptionHandlerTest {
 
     @Test
     public void testExceptionURL() throws MalformedURLException {
-        ExceptionHandler.ExceptionURL("aa"); // pass valid URL
+        ExceptionHandler.ExceptionURL("https://mvnrepository.com/"); // pass valid URL
     }
 
     @Test
     public void testExceptionURLFinal() throws MalformedURLException {
-        ExceptionHandler.ExceptionURLFinal("aa"); // pass valid URL
+        ExceptionHandler.ExceptionURLFinal("https://mvnrepository.com/"); // pass valid URL
     }
 
     @Test
     public void testExceptionURLPass() {
-        ExceptionHandler.ExceptionURLPass(""); // Pass valid URL, Executes and Skips Exception
+        ExceptionHandler.ExceptionURLPass("https://mvnrepository.com/"); // Pass valid URL, Executes and Skips Exception
     }
 }

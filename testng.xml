@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Restapisuite">
+    <listeners>
+        <listener class-name="config.Listeners"/>
+    </listeners>
+    <test thread-count="3" name="handlerstest">
+        <classes>
+            <class name="handlers.FileHandlerTest"/>
+            <class name="handlers.ExcelHandlerTest"/>
+            <class name="handlers.ExceptionHandlerTest"/>
+        </classes>
+    </test>
+</suite>

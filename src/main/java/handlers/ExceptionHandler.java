@@ -70,7 +70,7 @@ public class ExceptionHandler {
 
     public static void ExceptionURLFinal(String a) throws MalformedURLException {
         try{
-            new URL("");
+            new URL(a);
         } finally{
             System.out.println("In finally block");
         }
@@ -78,7 +78,7 @@ public class ExceptionHandler {
 
     public static void ExceptionURLPass(String a) {
         try{
-            new URL("");
+            new URL(a);
         } catch (MalformedURLException e) {
             System.out.println("Skip exception and continue");
         } finally {
