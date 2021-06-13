@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class WebDriverManager {
 
-    private static String userDir = System.getProperty("user.dir");
+    final static String userDir = System.getProperty("user.dir");
 
     public static void main(String[] args) {
         System.out.print("Enter a number to select browser\n");
@@ -20,7 +20,7 @@ public class WebDriverManager {
         if (osName.equalsIgnoreCase("Mac OS X")) {
             switch (a) {
                 case 1:
-                    Chrun();
+                    Ch1run();
                     break;
                 case 2:
                     firun();
@@ -43,7 +43,7 @@ public class WebDriverManager {
     }
 
 
-    public static void Chrun() {
+    public static void Ch1run() {
 
         System.setProperty("webdriver.chrome.driver", userDir + "/src/main/resources/chromedriver");
         WebDriver chrome = new ChromeDriver();
@@ -59,7 +59,7 @@ public class WebDriverManager {
         WebDriver winChrome = new ChromeDriver();
         winChrome.get("https://mars.nasa.gov/insight/");
         winChrome.manage().window().maximize();
-        winChrome.quit();
+        //winChrome.quit();
         System.out.println();
     }
 

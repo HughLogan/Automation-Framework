@@ -44,9 +44,9 @@ public class RestServices {
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
             String json = "{\r\n" +
-                    "  \"name\": \"test\",\r\n" +
-                    "  \"salary\": \"123\",\r\n" +
-                    "  \"age\": \"23\",\r\n" +
+                    "  \"name\": \"tony\",\r\n" +
+                    "  \"salary\": \"12388\",\r\n" +
+                    "  \"age\": \"27\",\r\n" +
                     "}";
             StringEntity stringEntity = new StringEntity(json);
             httpPost.setEntity(stringEntity);
