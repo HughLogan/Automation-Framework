@@ -55,7 +55,7 @@ public class WebDriverManager {
 
     public static void ChWinrun() {
 
-        System.setProperty("webdriver.chrome.driver", userDir + "/src/main/resources/winchromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", userDir + "/src/main/resources/chromedriver.exe");
         WebDriver winChrome = new ChromeDriver();
         winChrome.get("https://mars.nasa.gov/insight/");
         winChrome.manage().window().maximize();

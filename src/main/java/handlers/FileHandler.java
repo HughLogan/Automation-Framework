@@ -4,6 +4,13 @@ import java.io.*;
 
 public class FileHandler {
 
+    String folderPath = "/src/test/resources/";
+    String absPath;
+
+    public FileHandler() {
+        absPath = System.getProperty("user.dir") + folderPath;
+    }
+
 
     public static String readFile(String path) throws IOException {
         File ex = new File(path);

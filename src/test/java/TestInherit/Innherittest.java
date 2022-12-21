@@ -8,10 +8,13 @@ public class Innherittest {
 
     @Test
     public void testinh(){
-        B a = new B();
-        a.thro();
-        a.katch();
-        a.run();
+//        B a = new B();
+//        a.katch();
+//        a.katch(10);
+
+        A b = new B();
+        b.run();
+
     }
 
 

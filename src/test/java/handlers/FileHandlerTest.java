@@ -4,10 +4,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class FileHandlerTest {
-
-    String folderPath = "/src/test/resources/";
-    String absPath = System.getProperty("user.dir") + folderPath;
+public class FileHandlerTest extends FileHandler {
 
     @Test
     public void testReadFile() throws IOException {

@@ -2,8 +2,11 @@ package inheritance;
 
 public class A {
 
-    public void run(){
+    public A(){
+        System.out.println("A initialised");
+    }
 
+    public void run(){
         System.out.println("A runs");
     }
 }
