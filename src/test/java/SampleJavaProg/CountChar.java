@@ -17,9 +17,9 @@ public class CountChar {
 
         System.out.println();
 
-        for(j=0;j<256;j++){
-            if(count[j]!=0 && count[j]!=1 ){
-                System.out.print((char)j +"-- "+count[j]);
+        for(j=255;j>=0;j--){
+            if(count[j]!=0 ){
+                System.out.print((char)j +"-- ");
             }
         }
     }
