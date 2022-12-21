@@ -14,13 +14,13 @@ class MapEx {
         languages.put("Python", 3);
         languages.put("Pytho", 3);
 
-//        for ( String a  : languages.keySet() ) {
-//            System.out.println("HashMap: " + languages.get(a));
-//        }
-//        System.out.println("HashMap: " + languages.entrySet());
-//
-//
-//            System.out.println("HashMap: "+ languages.keySet());
+        for ( String a  : languages.keySet() ) {
+            System.out.println("HashMap: " + languages.get(a));
+        }
+        System.out.println("HashMap: " + languages.entrySet());
+
+
+            System.out.println("HashMap: "+ languages.keySet());
 
         for (String str : languages.keySet()) {
             System.out.println("HashMap: " + languages.get(str));
