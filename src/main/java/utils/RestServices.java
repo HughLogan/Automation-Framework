@@ -16,8 +16,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.testng.Assert;
-
 import java.io.IOException;
 
 
@@ -42,7 +40,9 @@ public class RestServices {
 
         String arr = js.get("books[1].subTitle");
 
-        Assert.assertEquals(arr,"A JavaScript and jQuery Developer's Guide","Failed");
+        if (!"A JavaScript and jQuery Developer's Guide".equals(arr)) {
+            throw new AssertionError("Failed");
+        }
 
         System.out.println("Response=>" + arr);
         }

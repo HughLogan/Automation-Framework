@@ -8,7 +8,7 @@ public class FileHandlerTest extends FileHandler {
 
     @Test
     public void testReadFile() throws IOException {
-        String str = FileHandler.readFile(absPath + "OpFil.txt");
+        String str = FileHandler.readFile(absPath + "OpFile.txt");
         System.out.println("Text in File" + str);
     }
 
