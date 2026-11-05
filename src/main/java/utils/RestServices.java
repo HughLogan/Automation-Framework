@@ -22,9 +22,12 @@ import java.io.IOException;
 
 public class RestServices {
 
+    private static final String DEFAULT_BOOKS_URL = "https://bookstore.toolsqa.com/BookStore/v1/Books";
+    private static final String DEFAULT_EMPLOYEE_API_URL = "https://dummy.restapiexample.com/api/v1";
+
     public static void getUser()  {
         // Specify the base URL to the RESTful web service
-        RestAssured.baseURI = "https://bookstore.toolsqa.com/BookStore/v1/Books";
+        RestAssured.baseURI = System.getProperty("rest.services.booksUrl", DEFAULT_BOOKS_URL);
         // Get the RequestSpecification of the request to be sent to the server.
         RequestSpecification httpRequest = RestAssured.given();
         // specify the method type (GET) and the parameters if any.
@@ -50,13 +53,13 @@ public class RestServices {
 
     public static void postUser() throws IOException {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpPost httpPost = new HttpPost("http://dummy.restapiexample.com/api/v1/create");
+            HttpPost httpPost = new HttpPost(employeeApiUrl() + "/create");
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
             String json = "{\r\n" +
                     "  \"name\": \"tony\",\r\n" +
                     "  \"salary\": \"12388\",\r\n" +
-                    "  \"age\": \"27\",\r\n" +
+                    "  \"age\": \"27\"\r\n" +
                     "}";
             StringEntity stringEntity = new StringEntity(json);
             httpPost.setEntity(stringEntity);
@@ -82,12 +85,12 @@ public class RestServices {
 
     public static void putUser() throws IOException {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpPut httpPut = new HttpPut("http://dummy.restapiexample.com/api/v1/update/1");
+            HttpPut httpPut = new HttpPut(employeeApiUrl() + "/update/1");
             httpPut.setHeader("Accept", "application/json");
             httpPut.setHeader("Content-type", "application/json");
             String json = "{\r\n" +   "  \"name\": \"Hello\",\r\n" +
                     "  \"salary\": \"123\",\r\n" +
-                    "  \"age\": \"23\",\r\n" +
+                    "  \"age\": \"23\"\r\n" +
                     "}";
             StringEntity stringEntity = new StringEntity(json);
             httpPut.setEntity(stringEntity);
@@ -112,7 +115,7 @@ public class RestServices {
     public static void deleteUser() throws IOException {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
-            HttpDelete httpDelete = new HttpDelete("http://dummy.restapiexample.com/api/v1/delete/68");
+            HttpDelete httpDelete = new HttpDelete(employeeApiUrl() + "/delete/68");
             System.out.println("Executing request " + httpDelete.getRequestLine());
 
             ResponseHandler<String> responseHandler = response -> {
@@ -128,5 +131,9 @@ public class RestServices {
             System.out.println("----------------------------------------");
             System.out.println(responseBody);
         }
+    }
+
+    private static String employeeApiUrl() {
+        return System.getProperty("rest.services.employeeApiUrl", DEFAULT_EMPLOYEE_API_URL);
     }
 }
